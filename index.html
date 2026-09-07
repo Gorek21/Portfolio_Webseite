@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pawel Gorka – Softwareentwickler & Webentwickler. Portfolio mit Projekten, Erfahrungen und technischen Fähigkeiten." />
+  <title>Pawel Gorka – Portfolio</title>
+  <link rel="icon" type="image/webp" href="Bilder/Favicon.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <!-- Top bar: Logo + Burger -->
+    <div class="nav__bar">
+      <a href="#" class="nav__logo">
+        <img src="Bilder/PortfolioLogoWhite.webp" alt="Pawel Gorka" class="nav__logo-img" />
+      </a>
+      <button class="nav__burger" id="navBurger" aria-label="Menü öffnen">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </button>
+    </div>
+
+    <!-- Fullscreen Staggered Overlay -->
+    <div class="nav__overlay" id="navOverlay">
+      <div class="nav__overlay-inner">
+        <ul class="nav__stagger">
+          <li style="--i:0"><a href="#about">Über mich</a></li>
+          <li style="--i:1"><a href="#experience">Erfahrung</a></li>
+          <li style="--i:2"><a href="#education">Studium</a></li>
+          <li style="--i:3"><a href="#projects">Projekte</a></li>
+          <li style="--i:4"><a href="#skills">Skills</a></li>
+          <li style="--i:5"><a href="impressum.html">Impressum</a></li>
+        </ul>
+        <div class="nav__social" style="--i:6">
+          <a href="mailto:info@pawel-gorka.com">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@pawel-gorka.com
+          </a>
+          <a href="https://github.com/Gorek21" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/pawel-gorka-241a22343/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://www.youtube.com/@GorekShorts" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-wrap" id="hero">
+    <div class="hero-stage" id="heroStage">
+
+      <!-- Glow-Wrapper (animierter Rand) -->
+      <div class="hero-glow-wrap" id="heroGlowWrap">
+      <div class="hero-box" id="heroBox">
+
+        <!-- Foto-Hintergründe (Fokus-Shift) -->
+        <div class="hero-photo" id="heroBg1"></div>
+        <div class="hero-photo hero-photo--2" id="heroBg2"></div>
+        <div class="hero-overlay" id="heroOverlay"></div>
+
+        <!-- Phase 1: Willkommen in verschiedenen Sprachen -->
+        <div class="hero-welcome" id="heroWelcome">
+          <div class="hero-welcome__word">
+            <span id="heroLangText">Willkommen</span><span class="hero-welcome__cur">|</span>
+          </div>
+        </div>
+
+        <!-- Phase 2: Hauptinhalt nach dem Expand -->
+        <div class="hero-main" id="heroMain">
+          <p class="hero__greeting">Hallo, ich bin</p>
+          <h1 class="hero__name">Pawel Gorka<span class="hero__name-dot">.</span></h1>
+          <p class="hero__tagline">Entdecken Sie, was ich gestalte,<br>entwickle und möglich mache.</p>
+        </div>
+
+      </div><!-- /hero-box -->
+      </div><!-- /hero-glow-wrap -->
+    </div><!-- /hero-stage -->
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <span class="section__label">01 — Über mich</span>
+      <h2 class="section__title">Wer ich bin</h2>
+      <div class="about__main">
+
+        <!-- Portrait + Interessen -->
+        <div class="about__portrait-col">
+          <div class="about__portrait-wrap">
+            <div class="about__portrait-glow"></div>
+            <img src="Bilder/Pawel-Portrait-Transparent.webp" alt="Pawel Gorka" class="about__portrait" />
+          </div>
+          <div class="about__divider"></div>
+          <div class="about__interests">
+            <div class="about__interests-group">
+              <span class="about__interests-label">Beruflich</span>
+              <div class="about__chips">
+                <span class="about__chip">Webentwicklung</span>
+                <span class="about__chip">IT-Support</span>
+                <span class="about__chip">KI & Automatisierung</span>
+                <span class="about__chip">UI/UX Design</span>
+              </div>
+            </div>
+            <div class="about__interests-group">
+              <span class="about__interests-label">Privat</span>
+              <div class="about__chips">
+                <span class="about__chip about__chip--hobby">📷 Fotografie</span>
+                <span class="about__chip about__chip--hobby">⛳ Golf</span>
+                <span class="about__chip about__chip--hobby">✈️ Reisen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about__content">
+          <div class="about__text">
+            <p>Ich studiere Medieninformatik an der <strong>Hochschule RheinMain</strong> in Wiesbaden und bringe praktische Erfahrung aus Webentwicklung, IT-Support und Softwareprojekten mit. Ich kombiniere technisches Know-how mit einem Blick für gute Gestaltung und eigenverantwortliches Arbeiten.</p>
+            <p>Als Werkstudent bei der <strong>100Marketing GmbH</strong> betreue ich rund 50 Kundenwebseiten und übernehme direkte technische Kundenkommunikation. Parallel koordiniere ich Webprojekte bei <strong>Produktionsservice Gerd Stroucken GmbH</strong>.</p>
+            <p>Ich lerne kontinuierlich dazu – aktuell mit Workflow-Automatisierung über n8n und KI-gestützter Berichterstellung.</p>
+          </div>
+
+          <!-- Stats -->
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="50">0</span>
+              <span class="about__stat-label">Betreute Webseiten</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="10">0</span>
+              <span class="about__stat-label">Projekte umgesetzt</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="3">0</span>
+              <span class="about__stat-label">Jahre Erfahrung</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery section section--dark" id="gallery">
+    <div class="container">
+      <span class="section__label">Fotografie</span>
+      <h2 class="section__title">Durch die Linse</h2>
+      <p class="gallery__intro">Neben Code und Webprojekten halte ich besondere Momente fest — auf dem Golfplatz, in der Natur und bei Menschen.</p>
+    </div>
+
+    <!-- Mosaikwand — alle Fotos gemischt -->
+    <div class="gallery__wall">
+      <div class="gallery__wall-item gallery__wall-item--large">
+        <img src="Bilder/Golf1.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item gallery__wall-item--tall">
+        <img src="Bilder/Natur1.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item">
+        <img src="Bilder/Golf2.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item gallery__wall-item--tall">
+        <img src="Bilder/Golf5.webp" loading="lazy" alt="" />
+      </div>
+
+
+
+      <div class="gallery__wall-item">
+        <img src="Bilder/Natur2.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item gallery__wall-item--tall">
+        <img src="Bilder/Golf6.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item ">
+        <img src="Bilder/Golf4.webp" loading="lazy" alt="" />
+      </div>
+
+
+      
+      <div class="gallery__wall-item gallery__wall-item--tall">
+        <img src="Bilder/Port2.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item">
+        <img src="Bilder/Golf9.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item">
+        <img src="Bilder/Golf8.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item gallery__wall-item--tall">
+        <img src="Bilder/Natur5.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item gallery__wall-item--large">
+        <img src="Bilder/Port5.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item gallery__wall-item--tall">
+        <img src="Bilder/Natur4.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item">
+        <img src="Bilder/Port1.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item">
+        <img src="Bilder/Natur3.webp" loading="lazy" alt="" />
+      </div>
+      <div class="gallery__wall-item">
+        <img src="Bilder/Port6.webp" loading="lazy" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="experience__sticky">
+      <div class="container">
+        <span class="section__label">02 — Erfahrung</span>
+        <h2 class="section__title experience__title">Beruflicher Werdegang</h2>
+
+        <div class="htl">
+          <!-- GANTT CHART -->
+          <div class="htl__wrapper" id="htlWrapper">
+            <div class="htl__needle" id="htlNeedle"></div>
+
+            <!-- Year axis -->
+            <div class="htl__row htl__row--axis">
+              <div class="htl__cell htl__cell--label"></div>
+              <div class="htl__cell htl__cell--track">
+                <div class="htl__axis-line"></div>
+                <span class="htl__yr" style="left:0%">Jan 22</span>
+                <span class="htl__yr" style="left:21.43%">2023</span>
+                <span class="htl__yr" style="left:42.86%">2024</span>
+                <span class="htl__yr" style="left:64.29%">2025</span>
+                <span class="htl__yr" style="left:85.71%">2026</span>
+                <span class="htl__yr htl__yr--now" style="left:100%">Heute</span>
+              </div>
+            </div>
+
+            <!-- AboWind: 0% → 35.71% -->
+            <div class="htl__row" data-job="0">
+              <div class="htl__cell htl__cell--label">AboWind</div>
+              <div class="htl__cell htl__cell--track">
+                <div class="htl__bar" style="left:0%;width:35.71%"></div>
+              </div>
+            </div>
+
+            <!-- Dr. Schäfer: 25% → 64.29% -->
+            <div class="htl__row" data-job="1">
+              <div class="htl__cell htl__cell--label">Dr. Schäfer</div>
+              <div class="htl__cell htl__cell--track">
+                <div class="htl__bar" style="left:25%;width:39.29%"></div>
+              </div>
+            </div>
+
+            <!-- Gerd Stroucken: 64.29% → 100% -->
+            <div class="htl__row" data-job="2">
+              <div class="htl__cell htl__cell--label">Gerd Stroucken</div>
+              <div class="htl__cell htl__cell--track">
+                <div class="htl__bar" style="left:64.29%;width:35.71%"></div>
+              </div>
+            </div>
+
+            <!-- 100Marketing: 80.36% → 100% -->
+            <div class="htl__row" data-job="3">
+              <div class="htl__cell htl__cell--label">100Marketing</div>
+              <div class="htl__cell htl__cell--track">
+                <div class="htl__bar" style="left:80.36%;width:19.64%"></div>
+              </div>
+            </div>
+          </div><!-- /htl__wrapper -->
+
+          <!-- DETAIL CARDS -->
+          <div class="htl__cards">
+
+            <div class="htl__card" data-job="0">
+              <div class="htl__card-head">
+                <div>
+                  <h3>Werkstudent – Büroorganisation &amp; Service</h3>
+                  <p class="htl__card-company">AboWind, Wiesbaden</p>
+                </div>
+                <span class="htl__card-period">01/2022 – 09/2023</span>
+              </div>
+            </div>
+
+            <div class="htl__card" data-job="1">
+              <div class="htl__card-head">
+                <div>
+                  <h3>Datenerfassung &amp; Datenanalyse</h3>
+                  <p class="htl__card-company">Dr. Schäfer Consulting, Wiesbaden / Zabrze</p>
+                </div>
+                <span class="htl__card-period">03/2023 – 01/2025</span>
+              </div>
+              <ul class="htl__card-list">
+                <li>Erfassung und Analyse industrieller Produktionsdaten zur Prozessoptimierung</li>
+                <li>Strukturierte Datenaufbereitung für regelmäßige Produktionsberichte</li>
+              </ul>
+              <div class="htl__card-tags"><span>Datenanalyse</span><span>Berichterstellung</span><span>Excel</span></div>
+            </div>
+
+            <div class="htl__card" data-job="2">
+              <div class="htl__card-head">
+                <div>
+                  <h3>Werkstudent – Webentwicklung &amp; Projektkoordination</h3>
+                  <p class="htl__card-company">Produktionsservice Gerd Stroucken GmbH, Wiesbaden</p>
+                </div>
+                <span class="htl__card-period">01/2025 – heute</span>
+              </div>
+              <ul class="htl__card-list">
+                <li>Eigenständige Planung und Umsetzung einer Kundenwebseite sowie laufende Webseitenbetreuung</li>
+                <li>Kundenabstimmung zu Anforderungen, Webseitenstruktur und Design</li>
+                <li>Organisation von Kundenterminen und Koordination eines weiteren Mitarbeiters</li>
+              </ul>
+              <div class="htl__card-tags"><span>Webentwicklung</span><span>Projektkoordination</span><span>Kundenkommunikation</span></div>
+            </div>
+
+            <div class="htl__card" data-job="3">
+              <div class="htl__card-head">
+                <div>
+                  <h3>Werkstudent – Website-Betreuung &amp; IT-Support</h3>
+                  <p class="htl__card-company">100Marketing GmbH, Wiesbaden</p>
+                </div>
+                <span class="htl__card-period">10/2025 – heute</span>
+              </div>
+              <ul class="htl__card-list">
+                <li>Betreuung, Wartung und inhaltliche Pflege von 50 Webseiten; Wiederherstellung nach Ausfällen</li>
+                <li>Fehleranalyse bei Webformularen, Hosting und E-Mail-Versand; Einrichtung von E-Mail-Konten</li>
+                <li>Direkte technische Kundenbetreuung und Unterstützung bei der System-Integration</li>
+              </ul>
+              <div class="htl__card-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>WordPress</span><span>Hosting</span></div>
+            </div>
+
+          </div><!-- /htl__cards -->
+        </div><!-- /htl -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education section" id="education">
+    <div class="container">
+      <span class="section__label">03 — Ausbildung</span>
+      <h2 class="section__title">Studium &amp; Schulbildung</h2>
+      <div class="education__grid">
+
+        <div class="education__card education__card--main reveal">
+          <div class="education__card-header">
+            <div class="education__icon">🎓</div>
+            <div>
+              <h3 class="education__degree">Medieninformatik (B.Sc.)</h3>
+              <p class="education__school">Hochschule RheinMain, Wiesbaden</p>
+              <span class="education__period">seit Oktober 2022</span>
+            </div>
+          </div>
+          <p class="education__desc">Praxisorientiertes Studium an der Schnittstelle von Softwareentwicklung, Cloud-Technologien und digitalen Medien. Mehrere Softwareprojekte in Teamarbeit nach Scrum-Methodik.</p>
+          <div class="education__subjects">
+            <p class="education__subjects-label">Fachliche Schwerpunkte</p>
+            <div class="education__subjects-grid">
+              <div class="education__subject">
+                <span class="education__subject-icon">💻</span>
+                <span>Softwareentwicklung</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">🗄</span>
+                <span>Datenbanksysteme</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">☁</span>
+                <span>Cloud Computing</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">🖱</span>
+                <span>Mensch-Computer-Interaktion</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">🌐</span>
+                <span>Webentwicklung &amp; Sicherheit</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">🔺</span>
+                <span>Computergrafik &amp; Raytracing</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">🔗</span>
+                <span>Netzwerke &amp; Betriebssysteme</span>
+              </div>
+              <div class="education__subject">
+                <span class="education__subject-icon">🤝</span>
+                <span>Scrum &amp; Teamarbeit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="education__card reveal">
+          <div class="education__card-header">
+            <div class="education__icon education__icon--sm">🏫</div>
+            <div>
+              <h3 class="education__degree">Abitur</h3>
+              <p class="education__school">Allgemeine Hochschulreife</p>
+              <span class="education__period">Juni 2021</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <span class="section__label">04 — Projekte</span>
+      <h2 class="section__title">Ausgewählte Arbeiten</h2>
+      <div class="projects__grid">
+
+        <div class="project-card project-card--featured reveal">
+          <div class="project-card__badge">Featured</div>
+          <div class="project-card__content">
+            <h3>Versicherungsverwaltung auf Google Cloud</h3>
+            <p>Hochschulprojekt mit Anforderungen eines realen Kunden. Entwicklung einer Versicherungsverwaltung mit Kunden-, Makler- und Administratorrollen sowie Anmeldung über Google. Datenhaltung mit Cloud Firestore, Cloud Storage und Cloud SQL; Einsatz von Cloud Armor als Sicherheitskomponente.</p>
+            <div class="project-card__tech">
+              <span>Java</span><span>Google Cloud</span><span>Cloud Firestore</span><span>Cloud SQL</span><span>Cloud Storage</span><span>Cloud Armor</span><span>Google Auth</span>
+            </div>
+          </div>
+          <div class="project-card__links">
+            <a href="https://www.youtube.com/watch?v=ndIPAbeJwZk" target="_blank" rel="noopener" class="btn btn--sm">▶ Demo ansehen</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>Verbindungs- &amp; Buchungsportal</h3>
+            <p>Webbasiertes Portal zur Auswahl und Buchung von Fahrverbindungen mit Start-, Einstiegs- und Zielort. Mit Live-Aktualisierung, Eingabevalidierung und Websicherheit.</p>
+            <div class="project-card__tech">
+              <span>Java</span><span>Spring Boot</span><span>Thymeleaf</span><span>WebSockets</span><span>Spring Security</span>
+            </div>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Gorek21/Webanwendungen2024" target="_blank" rel="noopener" class="btn btn--sm btn--ghost">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>Gestengesteuertes digitales Kochbuch</h3>
+            <p>Software zur Hand- und Gestenerkennung mit Kamera und Projektor zur Steuerung einer projizierten Benutzeroberfläche. Anwendung auf Kochanleitungen für berührungslose, hygienische Bedienung.</p>
+            <div class="project-card__tech">
+              <span>Mensch-Computer-Interaktion</span><span>Gestenerkennung</span><span>Kamera</span><span>Projektor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>Raumplanungssoftware</h3>
+            <p>Mitentwicklung einer Anwendung zur maßgenauen Einrichtung von Räumen mit unterschiedlichen Raumformen und Möbelgrößen. Objektplatzierung und -rotation, Kollisionserkennung sowie Stapelung geeigneter Objekte.</p>
+            <div class="project-card__tech">
+              <span>Java</span><span>OOP</span><span>GUI</span><span>Teamarbeit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>Spieleentwicklung im Scrum-Team</h3>
+            <p>Gemeinsame Entwicklung eines Spiels nach Scrum-Methodik in einem elfköpfigen Entwicklungsteam mit wöchentlichen Abstimmungen zum Entwicklungsfortschritt.</p>
+            <div class="project-card__tech">
+              <span>Scrum</span><span>Teamarbeit</span><span>Java</span><span>Softwareprojekt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>MP3-Player mit grafischer Benutzeroberfläche</h3>
+            <p>Eigenständige Entwicklung eines MP3-Players in Java mit Musikwiedergabe und übersichtlich gestalteter grafischer Benutzeroberfläche.</p>
+            <div class="project-card__tech">
+              <span>Java</span><span>GUI</span><span>Audio API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>Animationsvideo – Hochschulprojekt</h3>
+            <p>Nicht-kommerzielles Animationsvideo, produziert im Rahmen des Medieninformatikstudiums. Konzeption, Gestaltung und Umsetzung mit Adobe After Effects.</p>
+            <div class="project-card__tech">
+              <span>Adobe After Effects</span><span>Animation</span><span>Motion Design</span><span>Typografie</span>
+            </div>
+          </div>
+          <div class="project-card__links">
+            <a href="https://youtu.be/oCWDWFceSTA" target="_blank" rel="noopener" class="btn btn--sm">▶ Video ansehen</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-card__content">
+            <h3>Auszeichnungssprachen – Studiumswebseite</h3>
+            <p>Universitätsmodul in dem HTML, SCSS, CSS und JavaScript erlernt und direkt angewendet wurden. Ergebnis ist eine vollständige mehrseitige Webseite zum Thema Medieninformatikstudium an der Hochschule RheinMain.</p>
+            <div class="project-card__tech">
+              <span>HTML</span><span>CSS</span><span>SCSS</span><span>JavaScript</span><span>Hochschulprojekt</span>
+            </div>
+          </div>
+          <div class="project-card__links">
+            <a href="Auszeichungssprachen/MeinStudium.html" class="btn btn--sm btn--ghost">Seite ansehen →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section section--dark" id="skills">
+    <div class="container">
+      <span class="section__label">05 — Skills</span>
+      <h2 class="section__title">Technische Kenntnisse</h2>
+      <div class="skills__grid">
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title">
+            <span class="skill-group__icon">⌨</span>
+            Programmiersprachen
+          </h3>
+          <div class="skill-group__tags">
+            <span>Java</span><span>Python</span><span>C</span><span>JavaScript</span><span>PHP</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title">
+            <span class="skill-group__icon">🌐</span>
+            Webentwicklung
+          </h3>
+          <div class="skill-group__tags">
+            <span>HTML</span><span>CSS</span><span>SCSS</span><span>XML</span>
+            <span>Spring Boot</span><span>Thymeleaf</span><span>WordPress</span>
+            <span>WebSockets</span><span>Eingabevalidierung</span><span>Websicherheit</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title">
+            <span class="skill-group__icon">☁</span>
+            Cloud &amp; Datenbanken
+          </h3>
+          <div class="skill-group__tags">
+            <span>Google Cloud Platform</span><span>Cloud Firestore</span>
+            <span>Cloud Storage</span><span>Cloud SQL</span><span>Cloud Armor</span>
+            <span>SQL</span><span>MySQL</span><span>Relationale Datenmodellierung</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title">
+            <span class="skill-group__icon">🔧</span>
+            Softwaregrundlagen
+          </h3>
+          <div class="skill-group__tags">
+            <span>Algorithmen &amp; Datenstrukturen</span><span>Laufzeiteffizienz</span>
+            <span>UML</span><span>OOP</span><span>Scrum</span><span>Java-GUI</span>
+            <span>Gestenbasierte Interaktion</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title">
+            <span class="skill-group__icon">⚡</span>
+            Praxis &amp; Automatisierung
+          </h3>
+          <div class="skill-group__tags">
+            <span>Webseitenbetrieb</span><span>Hosting &amp; E-Mail-Support</span>
+            <span>Webseiten-Migration</span><span>n8n</span>
+            <span>KI-gestützte Berichterstellung</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title">
+            <span class="skill-group__icon">🛡</span>
+            Netzwerke &amp; Computergrafik
+          </h3>
+          <div class="skill-group__tags">
+            <span>Routing</span><span>IP- &amp; MAC-Adressen</span>
+            <span>Netzwerk-Schichtenmodelle</span><span>Betriebssysteme</span>
+            <span>Raytracing</span><span>Licht- &amp; Materialberechnung</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SPRACHEN -->
+      <div class="languages reveal">
+        <h3 class="languages__title">Sprachen</h3>
+        <div class="languages__grid">
+          <div class="language__item">
+            <span class="language__name">Deutsch</span>
+            <span class="language__level language__level--native">Muttersprache</span>
+          </div>
+          <div class="language__item">
+            <span class="language__name">Polnisch</span>
+            <span class="language__level language__level--native">Muttersprache</span>
+          </div>
+          <div class="language__item">
+            <span class="language__name">Englisch</span>
+            <span class="language__level">B1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">© 2026 Pawel Gorka · <a href="https://pawel-gorka.com">pawel-gorka.com</a> · <a href="impressum.html">Impressum</a></p>
+      <p class="footer__made">Gebaut mit HTML, SCSS &amp; JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="gallery__lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery__lb-backdrop"></div>
+    <img src="" alt="" class="gallery__lb-img" id="galleryLbImg" />
+    <button class="gallery__lb-close" id="galleryLbClose" aria-label="Schließen">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

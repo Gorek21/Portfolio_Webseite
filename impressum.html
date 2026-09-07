@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Pawel Gorka</title>
+  <link rel="icon" type="image/webp" href="Bilder/Favicon.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      color: #e2e8f0;
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #6366f1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .back {
+      position: fixed;
+      top: 28px;
+      left: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #64748b;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+      z-index: 10;
+    }
+    .back:hover { color: #e2e8f0; text-decoration: none; }
+    .back svg { transition: transform 0.25s ease; }
+    .back:hover svg { transform: translateX(-3px); }
+
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 140px 32px 100px;
+    }
+
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #6366f1;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 64px;
+      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .block {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #a78bfa;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #94a3b8;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 48px 0;
+    }
+
+    .footer-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #475569;
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Portfolio
+  </a>
+
+  <main class="page">
+    <span class="label">Rechtliches</span>
+    <h1>Impressum</h1>
+
+    <div class="block">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>Pawel Gorka</p>
+      <p>Kellerstraße 12<br />65183 Wiesbaden<br />Deutschland</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <h2>Kontakt</h2>
+      <p>E-Mail: <a href="mailto:info@pawel-gorka.com">info@pawel-gorka.com</a></p>
+      <p>Telefon: Telefonische Beratung nur nach vorheriger Terminvereinbarung per E-Mail.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>Pawel Gorka<br />Anschrift s. o.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <h2>Urheberrecht</h2>
+      <p>Alle Inhalte dieser Webseite sind aus eigener Produktion. Die Erlaubnis der fotografierten Personen wurde eingeholt. Pawel Gorka ist Urheber sämtlicher auf dieser Webseite gezeigten Inhalte.</p>
+      <p>Die Verwendung der gezeigten Inhalte — insbesondere der Fotografien — ist erst nach ausdrücklicher Absprache mit dem Urheber gestattet.</p>
+    </div>
+
+    <p class="footer-note">© 2026 Pawel Gorka · pawel-gorka.com</p>
+  </main>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
   <link rel="icon" type="image/webp" href="Bilder/Favicon.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -232,6 +232,8 @@
         <div class="htl">
           <!-- GANTT CHART -->
           <div class="htl__wrapper" id="htlWrapper">
+            <span class="htl__needle-echo htl__needle-echo--2" id="htlEcho2"></span>
+            <span class="htl__needle-echo htl__needle-echo--1" id="htlEcho1"></span>
             <div class="htl__needle" id="htlNeedle"></div>
 
             <!-- Year axis -->
@@ -239,12 +241,12 @@
               <div class="htl__cell htl__cell--label"></div>
               <div class="htl__cell htl__cell--track">
                 <div class="htl__axis-line"></div>
-                <span class="htl__yr" style="left:0%">Jan 22</span>
-                <span class="htl__yr" style="left:21.43%">2023</span>
-                <span class="htl__yr" style="left:42.86%">2024</span>
-                <span class="htl__yr" style="left:64.29%">2025</span>
-                <span class="htl__yr" style="left:85.71%">2026</span>
-                <span class="htl__yr htl__yr--now" style="left:100%">Heute</span>
+                <span class="htl__yr" style="left:0%">Jan 22<i class="htl__yr-ping"></i></span>
+                <span class="htl__yr" style="left:21.43%">2023<i class="htl__yr-ping"></i></span>
+                <span class="htl__yr" style="left:42.86%">2024<i class="htl__yr-ping"></i></span>
+                <span class="htl__yr" style="left:64.29%">2025<i class="htl__yr-ping"></i></span>
+                <span class="htl__yr" style="left:85.71%">2026<i class="htl__yr-ping"></i></span>
+                <span class="htl__yr htl__yr--now" style="left:100%">Heute<i class="htl__yr-ping"></i></span>
               </div>
             </div>
 
@@ -252,7 +254,7 @@
             <div class="htl__row" data-job="0">
               <div class="htl__cell htl__cell--label">AboWind</div>
               <div class="htl__cell htl__cell--track">
-                <div class="htl__bar" style="left:0%;width:35.71%"></div>
+                <div class="htl__bar" style="left:0%;width:35.71%"><div class="htl__bar-fill"></div></div>
               </div>
             </div>
 
@@ -260,7 +262,7 @@
             <div class="htl__row" data-job="1">
               <div class="htl__cell htl__cell--label">Dr. Schäfer</div>
               <div class="htl__cell htl__cell--track">
-                <div class="htl__bar" style="left:25%;width:39.29%"></div>
+                <div class="htl__bar" style="left:25%;width:39.29%"><div class="htl__bar-fill"></div></div>
               </div>
             </div>
 
@@ -268,7 +270,7 @@
             <div class="htl__row" data-job="2">
               <div class="htl__cell htl__cell--label">Gerd Stroucken</div>
               <div class="htl__cell htl__cell--track">
-                <div class="htl__bar" style="left:64.29%;width:35.71%"></div>
+                <div class="htl__bar" style="left:64.29%;width:35.71%"><div class="htl__bar-fill"></div></div>
               </div>
             </div>
 
@@ -276,7 +278,7 @@
             <div class="htl__row" data-job="3">
               <div class="htl__cell htl__cell--label">100Marketing</div>
               <div class="htl__cell htl__cell--track">
-                <div class="htl__bar" style="left:80.36%;width:19.64%"></div>
+                <div class="htl__bar" style="left:80.36%;width:19.64%"><div class="htl__bar-fill"></div></div>
               </div>
             </div>
           </div><!-- /htl__wrapper -->
@@ -428,6 +430,7 @@
         <div class="project-card project-card--featured reveal">
           <div class="project-card__badge">Featured</div>
           <div class="project-card__content">
+            <span class="project-card__index">01</span>
             <h3>Versicherungsverwaltung auf Google Cloud</h3>
             <p>Hochschulprojekt mit Anforderungen eines realen Kunden. Entwicklung einer Versicherungsverwaltung mit Kunden-, Makler- und Administratorrollen sowie Anmeldung über Google. Datenhaltung mit Cloud Firestore, Cloud Storage und Cloud SQL; Einsatz von Cloud Armor als Sicherheitskomponente.</p>
             <div class="project-card__tech">
@@ -435,12 +438,13 @@
             </div>
           </div>
           <div class="project-card__links">
-            <a href="https://www.youtube.com/watch?v=ndIPAbeJwZk" target="_blank" rel="noopener" class="btn btn--sm">▶ Demo ansehen</a>
+            <a href="projekte/versicherungsverwaltung.html" class="btn btn--sm btn--primary">Details ansehen →</a>
           </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">02</span>
             <h3>Verbindungs- &amp; Buchungsportal</h3>
             <p>Webbasiertes Portal zur Auswahl und Buchung von Fahrverbindungen mit Start-, Einstiegs- und Zielort. Mit Live-Aktualisierung, Eingabevalidierung und Websicherheit.</p>
             <div class="project-card__tech">
@@ -448,52 +452,70 @@
             </div>
           </div>
           <div class="project-card__links">
+            <a href="projekte/webanwendungen.html" class="btn btn--sm btn--primary">Details ansehen →</a>
             <a href="https://github.com/Gorek21/Webanwendungen2024" target="_blank" rel="noopener" class="btn btn--sm btn--ghost">GitHub →</a>
           </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">03</span>
             <h3>Gestengesteuertes digitales Kochbuch</h3>
             <p>Software zur Hand- und Gestenerkennung mit Kamera und Projektor zur Steuerung einer projizierten Benutzeroberfläche. Anwendung auf Kochanleitungen für berührungslose, hygienische Bedienung.</p>
             <div class="project-card__tech">
               <span>Mensch-Computer-Interaktion</span><span>Gestenerkennung</span><span>Kamera</span><span>Projektor</span>
             </div>
           </div>
+          <div class="project-card__links">
+            <a href="projekte/kochbuch.html" class="btn btn--sm btn--primary">Details ansehen →</a>
+          </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">04</span>
             <h3>Raumplanungssoftware</h3>
             <p>Mitentwicklung einer Anwendung zur maßgenauen Einrichtung von Räumen mit unterschiedlichen Raumformen und Möbelgrößen. Objektplatzierung und -rotation, Kollisionserkennung sowie Stapelung geeigneter Objekte.</p>
             <div class="project-card__tech">
               <span>Java</span><span>OOP</span><span>GUI</span><span>Teamarbeit</span>
             </div>
           </div>
+          <div class="project-card__links">
+            <a href="projekte/raumplanung.html" class="btn btn--sm btn--primary">Details ansehen →</a>
+          </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">05</span>
             <h3>Spieleentwicklung im Scrum-Team</h3>
             <p>Gemeinsame Entwicklung eines Spiels nach Scrum-Methodik in einem elfköpfigen Entwicklungsteam mit wöchentlichen Abstimmungen zum Entwicklungsfortschritt.</p>
             <div class="project-card__tech">
               <span>Scrum</span><span>Teamarbeit</span><span>Java</span><span>Softwareprojekt</span>
             </div>
           </div>
+          <div class="project-card__links">
+            <a href="projekte/scrum-spiel.html" class="btn btn--sm btn--primary">Details ansehen →</a>
+          </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">06</span>
             <h3>MP3-Player mit grafischer Benutzeroberfläche</h3>
             <p>Eigenständige Entwicklung eines MP3-Players in Java mit Musikwiedergabe und übersichtlich gestalteter grafischer Benutzeroberfläche.</p>
             <div class="project-card__tech">
               <span>Java</span><span>GUI</span><span>Audio API</span>
             </div>
           </div>
+          <div class="project-card__links">
+            <a href="projekte/mp3-player.html" class="btn btn--sm btn--primary">Details ansehen →</a>
+          </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">07</span>
             <h3>Animationsvideo – Hochschulprojekt</h3>
             <p>Nicht-kommerzielles Animationsvideo, produziert im Rahmen des Medieninformatikstudiums. Konzeption, Gestaltung und Umsetzung mit Adobe After Effects.</p>
             <div class="project-card__tech">
@@ -501,12 +523,14 @@
             </div>
           </div>
           <div class="project-card__links">
-            <a href="https://youtu.be/oCWDWFceSTA" target="_blank" rel="noopener" class="btn btn--sm">▶ Video ansehen</a>
+            <a href="projekte/animationsvideo.html" class="btn btn--sm btn--primary">Details ansehen →</a>
+            <a href="https://youtu.be/oCWDWFceSTA" target="_blank" rel="noopener" class="btn btn--sm btn--ghost">▶ Video</a>
           </div>
         </div>
 
         <div class="project-card reveal">
           <div class="project-card__content">
+            <span class="project-card__index">08</span>
             <h3>Auszeichnungssprachen – Studiumswebseite</h3>
             <p>Universitätsmodul in dem HTML, SCSS, CSS und JavaScript erlernt und direkt angewendet wurden. Ergebnis ist eine vollständige mehrseitige Webseite zum Thema Medieninformatikstudium an der Hochschule RheinMain.</p>
             <div class="project-card__tech">
@@ -514,6 +538,7 @@
             </div>
           </div>
           <div class="project-card__links">
+            <a href="projekte/auszeichnungssprachen.html" class="btn btn--sm btn--primary">Details ansehen →</a>
             <a href="Auszeichungssprachen/MeinStudium.html" class="btn btn--sm btn--ghost">Seite ansehen →</a>
           </div>
         </div>

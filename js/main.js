@@ -337,11 +337,22 @@ function animateCounters() {
 
   const wrapper = document.getElementById('htlWrapper');
   const needle  = document.getElementById('htlNeedle');
+  const echo1   = document.getElementById('htlEcho1');
+  const echo2   = document.getElementById('htlEcho2');
   const rows    = section.querySelectorAll('.htl__row:not(.htl__row--axis)');
   const cards   = section.querySelectorAll('.htl__card');
+  const bars    = section.querySelectorAll('.htl__row:not(.htl__row--axis) .htl__bar');
+  const htlRoot = section.querySelector('.htl');
 
-  let pinnedJob = -1;
-  let scrollJob = 0;
+  // Year markers live at these month-offsets from Jan 2022 (0,12,24,36,48,56)
+  const YEAR_MARKS = [0, 12, 24, 36, 48, 56];
+  const yrPings    = Array.from(section.querySelectorAll('.htl__yr-ping'));
+
+  let pinnedJob  = -1;
+  let scrollJob  = 0;
+  let prevMonth  = -1;
+
+  const clamp01 = n => Math.max(0, Math.min(1, n));
 
   // Make section tall enough for scroll animation (sticky height + animation zone)
   function applyHeight() {
@@ -365,19 +376,65 @@ function animateCounters() {
     cards.forEach((c, i) => c.classList.toggle('is-active', active.has(i)));
   }
 
+  // Restart a CSS animation by forcing a reflow between class removal/add
+  function triggerPing(el) {
+    if (!el) return;
+    el.classList.remove('is-ping');
+    void el.offsetWidth;
+    el.classList.add('is-ping');
+  }
+
   function onScroll() {
     const scrollable = section.offsetHeight - window.innerHeight;
     const progress   = Math.max(0, Math.min(1, -section.getBoundingClientRect().top / scrollable));
+    const month      = progress * TOTAL_MONTHS;
 
     const trackW = wrapper.offsetWidth - LABEL_W;
-    needle.style.left = (LABEL_W + progress * trackW) + 'px';
+    const leftPx = (LABEL_W + progress * trackW) + 'px';
+    needle.style.left = leftPx;
+    if (echo1) echo1.style.left = leftPx;
+    if (echo2) echo2.style.left = leftPx;
 
-    scrollJob = jobsAtMonth(progress * TOTAL_MONTHS);
+    // Draw-on bar fill: each bar fills live as the needle sweeps across its span
+    JOBS.forEach((j, i) => {
+      const bar = bars[i];
+      if (!bar) return;
+      const fill = clamp01((month - j.start) / (j.end - j.start));
+      bar.style.setProperty('--fill', fill.toFixed(4));
+      bar.classList.toggle('is-drawing', fill > 0.001 && fill < 0.999);
+    });
+
+    // Radar ping when the needle crosses a year marker (either scroll direction)
+    if (prevMonth >= 0) {
+      YEAR_MARKS.forEach((m, i) => {
+        if ((prevMonth < m && month >= m) || (prevMonth > m && month <= m)) {
+          triggerPing(yrPings[i]);
+        }
+      });
+    }
+    prevMonth = month;
+
+    scrollJob = jobsAtMonth(month);
     if (pinnedJob === -1) activate(scrollJob);
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // Subtle magnetic tilt — mirrors the hero's proximity-glow interaction language
+  if (htlRoot) {
+    htlRoot.addEventListener('mousemove', (e) => {
+      const r = htlRoot.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width)  * 2 - 1;
+      const y = ((e.clientY - r.top)  / r.height) * 2 - 1;
+      htlRoot.style.setProperty('--htl-tilt-x', x.toFixed(3));
+      htlRoot.style.setProperty('--htl-tilt-y', y.toFixed(3));
+    });
+    htlRoot.addEventListener('mouseleave', () => {
+      htlRoot.style.setProperty('--htl-tilt-x', 0);
+      htlRoot.style.setProperty('--htl-tilt-y', 0);
+    });
+  }
 
   function bindEl(el, idx) {
     el.addEventListener('mouseenter', () => { if (pinnedJob === -1) activate(idx); });

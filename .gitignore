@@ -1,3 +1,5 @@
 .DS_Store
 *.docx
 node_modules/
+.agents
+.claude
